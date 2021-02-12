@@ -4,13 +4,13 @@ let
 
   iHaskell = jupyter.kernels.iHaskellWith {
     name = "haskell";
-    packages = p: with p; [ containers ];
+    packages = p: with p; [ containers semilattices ];  
+    extraIHaskellFlags = "--codemirror Haskell";
   };
 
   jupyterEnvironment =
     jupyter.jupyterlabWith {
       kernels = [ iHaskell ];
-      # directory = ./jupyterlab;
     };
 in
   jupyterEnvironment.env
