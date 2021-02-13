@@ -4,7 +4,7 @@ let
 
   iHaskell = jupyter.kernels.iHaskellWith {
     name = "haskell";
-    packages = p: with p; [ containers semilattices ];  
+    packages = p: with p; [ containers semilattices set-monad bifunctors ];  
     extraIHaskellFlags = "--codemirror Haskell";
   };
 
